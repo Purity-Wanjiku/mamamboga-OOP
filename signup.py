@@ -1,6 +1,6 @@
 
    
-class signup:
+class Signup:
     def __init__(self,First_Name,Last_Name,Email_Address,Phone_No,Account_password,Password_Confirm) :
         self.First_Name=First_Name
         self.Last_Name=Last_Name
