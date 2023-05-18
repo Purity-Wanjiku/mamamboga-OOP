@@ -4,26 +4,28 @@ class User:
         self.password = password
 
 class Product:
-    def __init__(self, name, product_type, availability, price, description):
+    def __init__(self, name, category, minimum-quantity, price):
         self.name = name
-        self.product_type = product_type
-        self.availability = availability
+        self.category = category
+        self.minimum-quantity = minimum-quantity
         self.price = price
-        self.description = description
     
-    def update_availability(self, availability):
-        self.availability = availability
+    def update_name = (self,name):
+        self.name = name
+        
+    def update_availability(self, category):
+        self.category = category
     
     def update_price(self, price):
         self.price = price
     
-    def update_description(self, description):
-        self.description = description
+    def update_minimum-quantity(self, minimum-quantity):
+        self.minimum-quantity = minimum-quantity
 
 class OrderItem:
-    def __init__(self, product, quantity):
+    def __init__(self, product, minimum-quantity):
         self.product = product
-        self.quantity = quantity
+        self.minimum-quantity = minimum-quantity
 
 class Order:
     def __init__(self, user, items):
@@ -33,7 +35,7 @@ class Order:
     def total_cost(self):
         total = 0
         for item in self.items:
-            total += item.product.price * item.quantity
+            total += item.product.price * item.minimum-quantity
         return total
 
 class OrderManager:
@@ -47,8 +49,8 @@ class OrderManager:
 
 # Example usage:
 user = User('val_buraje', 'password123')
-product1 = Product('apple', 'fruit', 10, 1.0, 'A juicy fruit with a crisp texture.')
-product2 = Product('carrot', 'vegetable', 5, 0.5, 'A root vegetable with a crunchy texture.')
+product1 = Product('apple', 'fruit', 35, 250)
+product2 = Product('carrot', 'vegetable', 105, 500)
 item1 = OrderItem(product1, 3)
 item2 = OrderItem(product2, 2)
 order_manager = OrderManager()
