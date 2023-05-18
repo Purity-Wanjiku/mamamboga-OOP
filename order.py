@@ -47,12 +47,4 @@ class OrderManager:
         self.orders.append(order)
         return order
 
-# Example usage:
-user = User('val_buraje', 'password123')
-product1 = Product('apple', 'fruit', 35, 250)
-product2 = Product('carrot', 'vegetable', 105, 500)
-item1 = OrderItem(product1, 3)
-item2 = OrderItem(product2, 2)
-order_manager = OrderManager()
-order = order_manager.place_order(user, [item1, item2])
-print(f'Order placed with total cost: ${order.total_cost()}')
+
