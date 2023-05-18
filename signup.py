@@ -25,4 +25,4 @@ class Signup:
         elif password== self.account_password:
             return(f"Password successful")
         else :
-            return(f"Your email does not match your password")
+            return(f"Invalid credentials. Please check your email and password and try again")
