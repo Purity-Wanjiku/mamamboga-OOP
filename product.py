@@ -40,13 +40,13 @@ class ProductCatalog:
 product_catalog = ProductCatalog()
 
 
-product_catalog.add_product('apple', 'fruit', 10, 1.0, 'A juicy fruit with a crisp texture.')
+product_catalog.add_product('apple', 'fruit', 35, 250)
 
 product = product_catalog.get_product_by_name('apple')
 if product:
-    product.update_availability(5)
-    product.update_price(1.5)
-    product.update_description('A popular fruit with many health benefits.')
+    product.update_category('Fruit')
+    product.update_price(35)
+    product.update_minimum-quantity(250)
     print('Product updated.')
 else:
     print('Product not found.')
