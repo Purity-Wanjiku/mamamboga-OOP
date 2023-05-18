@@ -17,6 +17,8 @@ class ShoppingCart:
             if item.id == item_id:
                 self.items.remove(item)
                 break
+                
+                
 
     def checkout(self):
         total_price = 0
