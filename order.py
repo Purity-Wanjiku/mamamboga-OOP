@@ -1,48 +1,31 @@
-class User:
-    def __init__(self, username, password):
-        self.username = username
-        self.password = password
-
-class Product:
-    def __init__(self, name, category, minimum_quantity, price):
-        self.name = name
-        self.category = category
-        self.minimum-quantity = minimum_quantity
-        self.price = price
-    
-    def update_name = (self,name):
-        self.name = name
+class Orders:
+    def __init__(self,name,order,payment,deliveryAdress) :
+        self.order=order
+        self.name=name
+        self.payment=payment
+        self.deliveryAddress=deliveryAdress
         
-    def update_availability(self, category):
-        self.category = category
+        # dictionary of the order attribute 
+    def add_order(self):
+        orders_dict={
+           "name":self.name,
+           "order":self.order,
+           "payment":self.payment,
+           "deliveryAdress":self.deliveryAddress,
+          
+       }
+        return orders_dict
     
-    def update_price(self, price):
-        self.price = price
-    
-    def update_minimum-quantity(self, minimum_quantity):
-        self.minimum-quantity = minimum_quantity
+    # instructs user to input their details
+name=input("Input your name")
+order=input("Input the type of order")
+payment=input("Input the type of payment")
+deliveryAddress=input("Input your delivery address")
 
-class OrderItem:
-    def __init__(self, product, minimum_quantity):
-        self.product = product
-        self.minimum-quantity = minimum_quantity
-
-class Order:
-    def __init__(self, user, items):
-        self.user = user
-        self.items = items
-    
-    def total_cost(self):
-        total = 0
-        for item in self.items:
-            total += item.product.price * item.minimum_quantity
-        return total
-
-class OrderManager:
-    def __init__(self):
-        self.orders = []
-    
-    def place_order(self, user, items):
+    # User example
+new_Customer=Orders(Name,order,payment,deliveryAddress)
+user=new_Customer
+print(new_Customer.add_order())
         order = Order(user, items)
         self.orders.append(order)
         return order
