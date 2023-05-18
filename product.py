@@ -1,26 +1,28 @@
 class Product:
-    def __init__(self, name, product_type, availability, price, description):
+    def __init__(self, name, category, minimum-quantity, price):
         self.name = name
-        self.product_type = product_type
-        self.availability = availability
+        self.category = category
+        self.minimum-quantity = minimum-quantity
         self.price = price
-        self.description = description
     
-    def update_availability(self, availability):
-        self.availability = availability
+    def update_name(self, name):
+        self.name = name
     
+    def update_category(self, category):
+        self.category = category
+    
+    def update_minimum-quantity(self, minimum-quantity):
+        self.minimum-quantity = minimum-quantity
+        
     def update_price(self, price):
         self.price = price
-    
-    def update_description(self, description):
-        self.description = description
 
 class ProductCatalog:
     def __init__(self):
         self.products = []
     
-    def add_product(self, name, product_type, availability, price, description):
-        product = Product(name, product_type, availability, price, description)
+    def add_product(self, name, category, price, minimum-quantity):
+        product = Product(name, category, price, minimum-quantity))
         self.products.append(product)
     
     def remove_product(self, name):
