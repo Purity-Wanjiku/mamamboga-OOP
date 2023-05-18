@@ -21,10 +21,10 @@ class PaymentManager:
     
     def process_payment(self, amount, payment_method):
         payment = Payment(amount, payment_method)
-        success = payment.confirm()
-        if success:
+        payment_confirm = payment.confirm()
+        if  payment_confirm:
             self.payments.append(payment)
-        return success
+        return "payment confirmed"
 
 
 payment_manager = PaymentManager()
