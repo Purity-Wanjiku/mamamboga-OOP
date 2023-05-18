@@ -1,22 +1,54 @@
-   #   Category
-class category:
-     def __init__(self,name):
-        self.name=name
-     def add_category(self,new_name):
-        self.name=new_name
-     def __str__(self):
-       return f"{self.name}"
-# product
-class product:
-    def __init__(self,name,quantity,price):
-        self.name=name
-        self.quantity=quantity
-        self.price=price
-    def product_name(self,p_name):
-        self.name=p_name
-    def product_quantity(self,p_quantity):
-        self.quantity=p_quantity
-    def product_price(self,p_price):
-        self.price=p_price
-    def __str__(self):
-        return f"{self.name},{self.quantity},{self.price}"
+class Product:
+    def __init__(self, name, product_type, availability, price, description):
+        self.name = name
+        self.product_type = product_type
+        self.availability = availability
+        self.price = price
+        self.description = description
+    
+    def update_availability(self, availability):
+        self.availability = availability
+    
+    def update_price(self, price):
+        self.price = price
+    
+    def update_description(self, description):
+        self.description = description
+
+class ProductCatalog:
+    def __init__(self):
+        self.products = []
+    
+    def add_product(self, name, product_type, availability, price, description):
+        product = Product(name, product_type, availability, price, description)
+        self.products.append(product)
+    
+    def remove_product(self, name):
+        for product in self.products:
+            if product.name == name:
+                self.products.remove(product)
+    
+    def get_product_by_name(self, name):
+        for product in self.products:
+            if product.name == name:
+                return product
+        return None
+
+
+product_catalog = ProductCatalog()
+
+
+product_catalog.add_product('apple', 'fruit', 10, 1.0, 'A juicy fruit with a crisp texture.')
+
+product = product_catalog.get_product_by_name('apple')
+if product:
+    product.update_availability(5)
+    product.update_price(1.5)
+    product.update_description('A popular fruit with many health benefits.')
+    print('Product updated.')
+else:
+    print('Product not found.')
+
+
+product_catalog.remove_product('apple')
+print('Product removed.')
