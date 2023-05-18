@@ -4,10 +4,10 @@ class User:
         self.password = password
 
 class Product:
-    def __init__(self, name, category, minimum-quantity, price):
+    def __init__(self, name, category, minimum_quantity, price):
         self.name = name
         self.category = category
-        self.minimum-quantity = minimum-quantity
+        self.minimum-quantity = minimum_quantity
         self.price = price
     
     def update_name = (self,name):
@@ -19,13 +19,13 @@ class Product:
     def update_price(self, price):
         self.price = price
     
-    def update_minimum-quantity(self, minimum-quantity):
-        self.minimum-quantity = minimum-quantity
+    def update_minimum-quantity(self, minimum_quantity):
+        self.minimum-quantity = minimum_quantity
 
 class OrderItem:
-    def __init__(self, product, minimum-quantity):
+    def __init__(self, product, minimum_quantity):
         self.product = product
-        self.minimum-quantity = minimum-quantity
+        self.minimum-quantity = minimum_quantity
 
 class Order:
     def __init__(self, user, items):
@@ -35,7 +35,7 @@ class Order:
     def total_cost(self):
         total = 0
         for item in self.items:
-            total += item.product.price * item.minimum-quantity
+            total += item.product.price * item.minimum_quantity
         return total
 
 class OrderManager:
