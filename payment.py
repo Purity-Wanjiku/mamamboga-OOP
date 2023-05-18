@@ -7,13 +7,13 @@ class Payment:
         
         if self.payment_method == 'M-Pesa':
             
-            return True  
+            return "paid via M-pesa" 
         elif self.payment_method == 'Cash':
             
-            return True  
+            return "paid via cash"  
         else:
            
-            return False
+            return "not paid"
 
 class PaymentManager:
     def __init__(self):
