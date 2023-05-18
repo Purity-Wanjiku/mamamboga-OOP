@@ -25,6 +25,6 @@ class ItemsAvailable:
 # use example
 
 
-item = ItemsAvailable("kiwi", 200, False, {"kiwi": 200, "mango": 100})
+item = ItemsAvailable("pineapple", 200, False, {"pineapple": 180, "mango": 100})
 
 print(item.add_item(False))
