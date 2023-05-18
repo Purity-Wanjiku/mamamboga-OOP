@@ -9,8 +9,7 @@ class signup:
         self.Account_password=Account_password   
         self.Password_Confirm=Password_Confirm
        
-        
-# password confirmation checks if the account password is correct
+        #Logging in after creating the account
 
     def validate_password(self):
         if(self.Account_password==self.Password_Confirm):
