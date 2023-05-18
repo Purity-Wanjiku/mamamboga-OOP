@@ -1,42 +1,30 @@
-class Item:
-    def __init__(self, id, name, price):
-        self.id = id
-        self.name = name
-        self.price = price
+class ItemsAvailable:
+    def __init__(self,item_name,price,addtocart, available_groceries) :
+        self.item_name=item_name
+        self.price=price
+        self.addtocart={}
+        self.groceries = {}
+        
+    def add_item(self,add):
+        self.add=self.addtocart
+
+#Checking if the item selection is available in stock
+
+        if self.item_name in self.groceries and self.price in self.groceries:
+            self.add==True
+            print(f"{self.item_name} added to basket")
+            
+        else:
+            self.add == False
+            print(f"{self.item_name} is not available")
+
+# returning the final state of the button "add to cart"
+
+        return self.add
+
+# use example
 
 
-class ShoppingCart:
-    def __init__(self):
-        self.items = []
+item = ItemsAvailable("kiwi", 200, False, {"kiwi": 200, "mango": 100})
 
-    def add_item(self, item):
-        self.items.append(item)
-
-    def remove_item(self, item_id):
-        for item in self.items:
-            if item.id == item_id:
-                self.items.remove(item)
-                break
-                
-                
-
-    def checkout(self):
-        total_price = 0
-        for item in self.items:
-            total_price += item.price
-        self.items = []
-        return total_price
-item1 = Item(1, "Item 1", 20.00)
-item2 = Item(2, "Item 2", 30.00)
-
-cart = ShoppingCart()
-
-cart.add_item(item1)
-cart.add_item(item2)
-
-print("Total Items in the cart:")
-for item in cart.items:
-    print(item.name)
-
-print("Total price:", cart.checkout())
-    
+print(item.add_item(False))
