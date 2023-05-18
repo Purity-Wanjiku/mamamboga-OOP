@@ -30,15 +30,15 @@ class PaymentManager:
 payment_manager = PaymentManager()
 
 
-success = payment_manager.process_payment(100.0, 'M-Pesa')
-if success:
+paid = payment_manager.process_payment(100.0, 'M-Pesa')
+if paid:
     print('Payment successful!')
 else:
     print('Payment failed.')
 
 
-success = payment_manager.process_payment(50.0, 'Cash')
-if success:
+paid_by_cash = payment_manager.process_payment(50.0, 'Cash')
+if paid_by_cash:
     print('Payment successful!')
 else:
     print('Payment failed.')
