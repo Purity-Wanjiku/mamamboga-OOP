@@ -1,56 +1,40 @@
-class Product:
-    def __init__(self, name, category, minimum-quantity, price):
+class Item:
+    def __init__(self, id, name, price):
+        self.id = id
         self.name = name
-        self.category = category
-        self.minimum-quantity = minimum-quantity
-        self.price = price
-    
-    def update_name(self, name):
-        self.name = name
-    
-    def update_category(self, category):
-        self.category = category
-    
-    def update_minimum-quantity(self, minimum-quantity):
-        self.minimum-quantity = minimum-quantity
-        
-    def update_price(self, price):
         self.price = price
 
-class ProductCatalog:
+
+class ShoppingCart:
     def __init__(self):
-        self.products = []
+        self.items = []
+
+    def add_item(self, item):
+        self.items.append(item)
+
+    def remove_item(self, item_id):
+        for item in self.items:
+            if item.id == item_id:
+                self.items.remove(item)
+                break
+
+    def checkout(self):
+        total_price = 0
+        for item in self.items:
+            total_price += item.price
+        self.items = []
+        return total_price
+item1 = Item(1, "Item 1", 20.00)
+item2 = Item(2, "Item 2", 30.00)
+
+cart = ShoppingCart()
+
+cart.add_item(item1)
+cart.add_item(item2)
+
+print("Total Items in the cart:")
+for item in cart.items:
+    print(item.name)
+
+print("Total price:", cart.checkout())
     
-    def add_product(self, name, category, price, minimum-quantity):
-        product = Product(name, category, price, minimum-quantity))
-        self.products.append(product)
-    
-    def remove_product(self, name):
-        for product in self.products:
-            if product.name == name:
-                self.products.remove(product)
-    
-    def get_product_by_name(self, name):
-        for product in self.products:
-            if product.name == name:
-                return product
-            return None
-
-
-product_catalog = ProductCatalog()
-
-
-product_catalog.add_product('apple', 'fruit', 35, 250)
-
-product = product_catalog.get_product_by_name('apple')
-if product:
-    product.update_category('Fruit')
-    product.update_price(35)
-    product.update_minimum-quantity(250)
-    print('Product updated.')
-else:
-    print('Product not found.')
-
-
-product_catalog.remove_product('apple')
-print('Product removed.')
