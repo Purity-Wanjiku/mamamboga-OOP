@@ -16,6 +16,7 @@ class ProductManager:
     def add_product(self, name, available):
         product = Product(name, available)
         self.products.append(product)
+        return "item added successfully"
     
     def search_product(self, name):
         for product in self.products:
