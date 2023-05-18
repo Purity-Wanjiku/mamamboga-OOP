@@ -34,7 +34,7 @@ class ProductCatalog:
         for product in self.products:
             if product.name == name:
                 return product
-        return None
+            return None
 
 
 product_catalog = ProductCatalog()
