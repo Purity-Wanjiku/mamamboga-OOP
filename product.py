@@ -1,33 +1,45 @@
-class ItemsAvailable:
-    def __init__(self,item_name,price,addtocart, available_groceries) :
-        self.item_name=item_name
-        self.price=price
-        self.addtocart={}
-        self.groceries = {}
-        
-    def add_item(self,add):
-        self.add=self.addtocart
-
-#Checking if the item selection is available in stock
-
-        if self.item_name in self.groceries and self.price in self.groceries:
-            self.add==True
-            print(f"{self.item_name} added to basket")
-            
+class Product:
+    def __init__(self, name, availability):
+        self.name = name
+        self.availability = availability
+    def check_availability(self):
+        if self.availability:
+            return f"The {self.name} is available."
         else:
-            self.add == False
-            print(f"{self.item_name} is not available")
+            return f"Sorry, the {self.name} is not available."
+my_object = Product("Tomoko",False)
+print (my_object.check_availability())
+my_object = Product("Guava",True)
+print (my_object.check_availability())
+class ProductManager:
+    def __init__(self, name):
+        self.name = name
+        self.products = []
+    def add_product(self, name, available):
+        product = Product(name, available)
+        self.products.append(product)
+        return "Item added successfully."
+    def search_product(self, name):
+        for product in self.products:
+         if product.name == name:
+                return product.check_availability()
+        return f"Sorry, the {self.name} is not found."
+# Instantiate an object of ProductManager
+product_manager = ProductManager("Fruit")
+# Add some products to the product manager
+product_manager.products.append(Product("Mango", True))
+product_manager.products.append(Product("Pineapple", False))
+product_manager.products.append(Product("Watermelon", True))
+# Search for a product
+print(product_manager.search_product("Mango"))
+print(product_manager.search_product("Watermelon"))
 
-# returning the final state of the button "add to cart"
-
-        return self.add
-
-# use example
 
 
-item = ItemsAvailable("pineapple", 200, False, {"pineapple": 180, "mango": 100})
 
-print(item.add_item(False))
+
+
+
 
 
 class Product:
