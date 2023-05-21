@@ -35,13 +35,6 @@ print(product_manager.search_product("Mango"))
 print(product_manager.search_product("Watermelon"))
 
 
-
-
-
-
-
-
-
 class Product:
     def __init__(self, name, available):
         self.name = name
