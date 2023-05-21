@@ -1,12 +1,16 @@
 class Product:
-    def __init__(self, name, availability):
+    def __init__(self, name, amount):
         self.name = name
-        self.availability = availability
+        self.amount = amount
+    
     def check_availability(self):
-        if self.availability:
-            return f"The {self.name} is available."
-        else:
-            return f"Sorry, the {self.name} is not available."
+     if self.amount <= 0:
+        return f"Sorry, the {self.name} is not available."
+     elif self.amount > 0:
+        return f"The {self.name} is available."
+my_object =  Product("Orange",40)
+print(my_object.check_availability())
+
 my_object = Product("Tomoko",False)
 print (my_object.check_availability())
 my_object = Product("Guava",True)
