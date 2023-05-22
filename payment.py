@@ -4,6 +4,7 @@ class Payment:
         self.payment_method = payment_method
         self.date = date
         self.receipt = receipt
+        
     
     def process_payment(self):
         if self.payment_method == "mpesa":
