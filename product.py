@@ -4,7 +4,6 @@ class Product:
         self.products = []
         
     def add_product(self, name):
-        product = Product(name)
         self.products.append(name)
         return f"{name} has been added to {self.name}."
     
