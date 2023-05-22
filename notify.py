@@ -19,6 +19,7 @@ class Notify:
             print("Hello, you have {} new orders from {}.".format(self.order_made, self.name))
         elif self.is_read:
             print("You have no new notifications.")
+            
 
 
 # Example usage:
